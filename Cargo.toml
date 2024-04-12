@@ -7,16 +7,16 @@ resolver = "2"
 missing_debug_implementations = "warn"
 
 [workspace.lints.clippy]
-ptr_as_ptr = "warn"
-undocumented_unsafe_blocks = "warn"
+assertions_on_result_states = "warn"
 cast_lossless = "warn"
 cast_possible_truncation = "warn"
 cast_possible_wrap = "warn"
 cast_sign_loss = "warn"
-exit = "warn"
-tests_outside_test_module = "warn"
-assertions_on_result_states = "warn"
 error_impl_error = "warn"
+exit = "warn"
+ptr_as_ptr = "warn"
+tests_outside_test_module = "warn"
+undocumented_unsafe_blocks = "warn"
 
 [profile.dev]
 panic = "abort"

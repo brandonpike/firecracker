@@ -381,7 +381,6 @@ dependencies = [
  "clap",
  "itertools 0.12.1",
  "proc-macro2",
- "quote",
  "syn 2.0.58",
  "uuid",
  "walkdir",
@@ -594,7 +593,6 @@ dependencies = [
  "regex",
  "seccompiler",
  "serde",
- "serde_derive",
  "serde_json",
  "thiserror",
  "timerfd",
@@ -848,7 +846,6 @@ dependencies = [
 name = "log-instrument-macros"
 version = "0.1.0"
 dependencies = [
- "proc-macro2",
  "quote",
  "syn 2.0.58",
 ]
@@ -1435,14 +1432,12 @@ checksum = "711b9620af191e0cdc7468a8d14e709c3dcdb115b36f838e601583af800a370a"
 name = "utils"
 version = "0.1.0"
 dependencies = [
- "derive_more",
  "displaydoc",
  "libc",
  "log-instrument",
  "serde",
  "serde_json",
  "thiserror",
- "vm-memory",
  "vmm-sys-util",
 ]
 
@@ -1525,7 +1520,6 @@ dependencies = [
  "itertools 0.12.1",
  "kvm-bindings",
  "kvm-ioctls",
- "lazy_static",
  "libc",
  "linux-loader",
  "log",
