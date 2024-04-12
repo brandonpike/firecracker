@@ -472,7 +472,7 @@ impl Net {
                 METRICS.mmds.rx_accepted.inc();
 
                 // MMDS frames are not accounted by the rate limiter.
-                Self::rate_limiter_replenish_op(rate_limiter, frame_iovec.len() as u64);
+                Self::rate_limiter_replenish_op(rate_limiter, u64::from(frame_iovec.len()));
 
                 // MMDS consumed the frame.
                 return Ok(true);
@@ -493,7 +493,7 @@ impl Net {
         let _metric = net_metrics.tap_write_agg.record_latency_metrics();
         match Self::write_tap(tap, frame_iovec) {
             Ok(_) => {
-                let len = frame_iovec.len() as u64;
+                let len = u64::from(frame_iovec.len());
                 net_metrics.tx_bytes_count.add(len);
                 net_metrics.tx_packets_count.inc();
                 net_metrics.tx_count.inc();
@@ -618,7 +618,7 @@ impl Net {
                 continue;
             }
 
-            if !Self::rate_limiter_consume_op(&mut self.tx_rate_limiter, buffer.len() as u64) {
+            if !Self::rate_limiter_consume_op(&mut self.tx_rate_limiter, u64::from(buffer.len())) {
                 tx_queue.undo_pop();
                 self.metrics.tx_rate_limiter_throttled.inc();
                 break;
